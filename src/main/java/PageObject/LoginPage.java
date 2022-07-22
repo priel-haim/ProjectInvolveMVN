@@ -13,6 +13,8 @@ public class LoginPage extends MenuPage {
     private WebElement Functionality;
     @FindBy(css = "#cookiescript_buttons div:nth-child(1)")
     private WebElement saveAndClose;
+    @FindBy(css = "body #cookiescript_injected")
+    private WebElement bodyCookies;
 
     // open my login
     @FindBy(css = ".other-link.login")
@@ -47,6 +49,7 @@ public class LoginPage extends MenuPage {
     public void cookies() {
         click(Functionality);
         sleep(200);
+        AllureAttachment.attachElementScreenshot(bodyCookies);
         click(saveAndClose);
     }
 
